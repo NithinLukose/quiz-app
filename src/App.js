@@ -1,24 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import React,{useState} from 'react';
+import Header from './component/header'
+import Category from './component/category'
+import Difficulty from './component/difficulty'
 import './App.css';
 
 function App() {
+
+  const [category,setCategory] = useState('Any Category')
+  const [difficulty,setDifficulty] = useState('Any Difficulty')
+
+  const handleCategoryChange = (e) => {
+
+    setCategory(e.target.value)
+
+  }
+  const handleDifficultyChange = (e) => {
+
+    setDifficulty(e.target.value)
+
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex-element">
+
+      
+      <Header text="Take Quiz"/>
+      <br/>
+      <br/>
+      <br/>
+      <Category category={category} onChange={handleCategoryChange} />
+      <Difficulty difficulty={difficulty} onChange={handleDifficultyChange} />
+
     </div>
   );
 }
