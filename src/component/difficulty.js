@@ -6,11 +6,11 @@ const Difficulty = ({category,onChange}) => {
 
         <div className='category'>
             <label>
-                Select Category
+                Select Difficulty
             <select value = {category} onChange={onChange} className="select"> 
             
                 
-                <option value="Any Category">Any Category</option>
+                <option  value="Any Category">Any Category</option>
                 
 
             </select>

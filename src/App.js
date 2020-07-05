@@ -1,7 +1,6 @@
 import React,{useState} from 'react';
-import Header from './component/header'
-import Category from './component/category'
-import Difficulty from './component/difficulty'
+
+import TakeQuizForm from './component/takeQuizForm'
 import './App.css';
 
 function App() {
@@ -19,18 +18,12 @@ function App() {
     setDifficulty(e.target.value)
 
   }
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log("helo")
+  }
   return (
-    <div className="flex-element">
-
-      
-      <Header text="Take Quiz"/>
-      <br/>
-      <br/>
-      <br/>
-      <Category category={category} onChange={handleCategoryChange} />
-      <Difficulty difficulty={difficulty} onChange={handleDifficultyChange} />
-
-    </div>
+    <TakeQuizForm category={category} handleCategoryChange={handleCategoryChange} difficulty={difficulty} handleDifficultyChange={handleDifficultyChange} handleSubmit={handleSubmit} />
   );
 }
 
